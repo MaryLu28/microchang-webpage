@@ -1,35 +1,10 @@
 import { cn } from "@/lib/utils";
-import { Mail, Map, Phone } from "lucide-react";
+
 import Image from "next/image";
 import React from "react";
 import InstagramLogo from "../imgs/instagram-icon.png";
 import TikTokLogo from "../imgs/tiktok-icon.png";
-
-const contactInfo: {
-  type: "phone" | "email" | "address";
-  text: string[];
-  href: string;
-  icon: React.ReactNode;
-}[] = [
-  {
-    type: "phone",
-    text: ["11-2713-2187"],
-    href: "tel:1127132187",
-    icon: <Phone className="size-4 md:size-5" />,
-  },
-  {
-    type: "email",
-    text: ["info@microchang.com.ar"],
-    href: "mailto:info@microchang.com.ar",
-    icon: <Mail className="size-4 md:size-5" />,
-  },
-  {
-    type: "address",
-    text: ["3 de Febrero 2544, Belgrano", "Ciudad Autónoma de Buenos Aires"],
-    href: "https://maps.app.goo.gl/n1zGP9C56HM6rQb96",
-    icon: <Map className="size-4 md:size-5" />,
-  },
-];
+import { CONTACT_INFO } from "@/constants/contact-info";
 
 const IconLink: React.FC<{
   type?: "phone" | "email" | "address";
@@ -75,7 +50,7 @@ const Footer: React.FC = () => {
           <div>
             <h3 className={titleClasses}>Contacto</h3>
             <div className="flex flex-col items-center md:items-start gap-2">
-              {contactInfo.map((info) => (
+              {CONTACT_INFO.map((info) => (
                 <IconLink
                   key={info.type}
                   type={info.type}

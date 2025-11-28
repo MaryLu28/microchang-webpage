@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { WHATSAPP_URL } from "@/constants/contact-info";
 import Link from "next/link";
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
           y asesoramiento personalizado.
         </p>
         <Button size="lg" asChild>
-          <Link href="https://wa.me/5491127132187" target="_blank">
+          <Link href={WHATSAPP_URL} target="_blank">
             CONTÁCTANOS
           </Link>
         </Button>
