@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="es" suppressHydrationWarning>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="flex min-h-screen flex-col items-center justify-center">
+          <div className="flex min-h-dvh flex-col items-center justify-center">
             <Header />
             <main className="flex flex-1 w-full max-w-5xl flex-col items-center justify-between sm:items-start">
               {children}
