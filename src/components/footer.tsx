@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 import InstagramLogo from "../imgs/instagram-icon.png";
-import TikTokLogo from "../imgs/tiktok-icon.png";
+// import TikTokLogo from "../imgs/tiktok-icon.png";
 import { CONTACT_INFO } from "@/constants/contact-info";
 
 const IconLink: React.FC<{
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
                   className="size-8 md:size-12"
                 />
               </a>
-              <a
+              {/* <a
                 href="https://www.tiktok.com/@microchang.ar/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
                   alt="TikTok"
                   className="size-8 md:size-12"
                 />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
