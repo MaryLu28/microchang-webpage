@@ -2,8 +2,9 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
-import Header from "../components/header";
-import { ThemeProvider } from "../components/theme-provider";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "MICRO CHANG",
@@ -25,6 +26,7 @@ export default function RootLayout({
             <main className="flex flex-1 w-full max-w-5xl flex-col items-center justify-between py-10 px-5 md:py-32 md:px-16 sm:items-start">
               {children}
             </main>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
