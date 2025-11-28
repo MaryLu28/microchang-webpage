@@ -6,7 +6,7 @@ import React from "react";
 import logo from "../imgs/logo.jpg";
 
 const ThemeRadios = dynamic(
-  () => import("./theme-radios").then((mod) => mod.ThemeRadios),
+  () => import("./theme-toggle").then((mod) => mod.ThemeToggle),
   { ssr: false }
 );
 
