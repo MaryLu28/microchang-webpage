@@ -30,7 +30,7 @@ export const CONTACT_INFO: {
     type: "phone",
     text: [phoneFormatter(PHONE_NUMBER) || PHONE_NUMBER],
     href: WHATSAPP_URL,
-    icon: <WhatsAppIcon sizeClass={ICON_SIZE_CLASSES} viewBox="4 4 24 24" />,
+    icon: <WhatsAppIcon className={ICON_SIZE_CLASSES} viewBox="4 4 24 24" />,
   },
   {
     type: "email",
