@@ -13,7 +13,7 @@ const ThemeRadios = dynamic(
 export const Header: React.FC = () => {
   return (
     <header className="w-full bg-black shadow-md border-b border-white/20">
-      <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto p-4 flex items-center justify-between">
         <Image
           src={logo}
           alt="Micro Chang Logo"
