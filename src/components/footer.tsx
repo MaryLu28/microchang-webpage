@@ -15,19 +15,19 @@ const contactInfo: {
     type: "phone",
     text: ["11-2713-2187"],
     href: "tel:1127132187",
-    icon: <Phone size={20} />,
+    icon: <Phone className="size-4 md:size-5" />,
   },
   {
     type: "email",
     text: ["info@microchang.com.ar"],
     href: "mailto:info@microchang.com.ar",
-    icon: <Mail size={20} />,
+    icon: <Mail className="size-4 md:size-5" />,
   },
   {
     type: "address",
     text: ["3 de Febrero 2544, Belgrano", "Ciudad Autónoma de Buenos Aires"],
     href: "https://maps.app.goo.gl/n1zGP9C56HM6rQb96",
-    icon: <Map size={20} />,
+    icon: <Map className="size-4 md:size-5" />,
   },
 ];
 
@@ -41,19 +41,18 @@ const IconLink: React.FC<{
     href={href}
     target="_blank"
     className={cn(
-      "text-gray-600 dark:text-gray-400 text-lg",
+      "text-gray-600 dark:text-gray-400 text-sm md:text-lg",
       "hover:text-accent-foreground dark:hover:text-accent-foreground",
       "flex gap-2 items-center",
-      type === "address" && "w-full",
-      type === "phone" &&
-        "border-r border-gray-600 pr-2 last:mr-0 last:border-0"
+      type === "address" && "items-start"
     )}
   >
-    <span>{icon}</span>
-    <p>
+    <span className={cn(type === "address" && "mt-1")}>{icon}</span>
+    <p className="text-center md:text-left">
       {text.map((line, index) => (
-        <span key={index} className="block">
+        <span key={index} className="md:block">
           {line}
+          {index < text.length - 1 && ", "}
         </span>
       ))}
     </p>
@@ -61,16 +60,21 @@ const IconLink: React.FC<{
 );
 
 const Footer: React.FC = () => {
-  const titleClasses = cn("text-xl", "font-semibold", "mb-4");
+  const titleClasses = cn(
+    "text-lg md:text-xl",
+    "text-center md:text-left",
+    "font-semibold",
+    "mb-4"
+  );
 
   return (
     <footer className="w-full shadow-md border-t border-black/20 dark:border-white/20">
-      <div className="container max-w-5xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4">
+      <div className="container max-w-5xl mx-auto px-4 py-6 md:py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-4">
           {/* Column 1 */}
-          <div className="md:col-span-2">
+          <div>
             <h3 className={titleClasses}>Contacto</h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-col items-center md:items-start gap-2">
               {contactInfo.map((info) => (
                 <IconLink
                   key={info.type}
@@ -83,10 +87,10 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 3 */}
+          {/* Column 2 */}
           <div>
             <h3 className={cn(titleClasses)}>Nuestras Redes</h3>
-            <div className="flex gap-4">
+            <div className="flex justify-center md:justify-start gap-4">
               <a
                 href="https://www.instagram.com/microchang.ar/"
                 target="_blank"
@@ -95,7 +99,7 @@ const Footer: React.FC = () => {
                 <Image
                   src={InstagramLogo}
                   alt="Instagram"
-                  className="size-12"
+                  className="size-8 md:size-12"
                 />
               </a>
               <a
@@ -103,7 +107,11 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src={TikTokLogo} alt="TikTok" className="size-12" />
+                <Image
+                  src={TikTokLogo}
+                  alt="TikTok"
+                  className="size-8 md:size-12"
+                />
               </a>
             </div>
           </div>
