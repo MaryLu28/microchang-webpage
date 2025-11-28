@@ -1,6 +1,14 @@
+"use client";
+
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import React from "react";
 import logo from "../imgs/logo.jpg";
-import Image from "next/image";
+
+const ThemeRadios = dynamic(
+  () => import("./theme-radios").then((mod) => mod.ThemeRadios),
+  { ssr: false }
+);
 
 export const Header: React.FC = () => {
   return (
@@ -11,6 +19,7 @@ export const Header: React.FC = () => {
           alt="Micro Chang Logo"
           className="w-25 md:w-35 h-auto"
         />
+        <ThemeRadios />
       </div>
     </header>
   );
