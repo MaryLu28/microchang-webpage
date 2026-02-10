@@ -5,7 +5,7 @@ import WhatsAppIcon from "@/components/whatsapp-icon";
 export const PHONE_NUMBER = "+5491127132187";
 export const WHATSAPP_MESSAGE = "Hola!";
 export const WHATSAPP_URL = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(
-  WHATSAPP_MESSAGE
+  WHATSAPP_MESSAGE,
 )}`;
 
 const phoneFormatter = (phone: string): string => {
@@ -40,8 +40,8 @@ export const CONTACT_INFO: {
   },
   {
     type: "address",
-    text: ["3 de Febrero 2544, Belgrano", "Ciudad Autónoma de Buenos Aires"],
-    href: "https://maps.app.goo.gl/Fc86jgVWaCtpbx2k7",
+    text: ["Zabala 1725, Belgrano", "Ciudad Autónoma de Buenos Aires"],
+    href: "https://maps.app.goo.gl/CX46UZGAUjSCYnQJA",
     icon: <Map className={ICON_SIZE_CLASSES} />,
   },
 ];
